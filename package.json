@@ -1,0 +1,24 @@
+{
+  "name": "taskpool",
+  "version": "1.0.0",
+  "description": "Make your tasks run in parallel with priority in a pool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoukq/TaskPool.git"
+  },
+  "keywords": [
+    "pool",
+    "task",
+    "request"
+  ],
+  "author": "kezhou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhoukq/TaskPool/issues"
+  },
+  "homepage": "https://github.com/zhoukq/TaskPool#readme"
+}
