@@ -4,7 +4,7 @@
   "description": "Make your tasks run in parallel with priority in a pool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/zhoukq/TaskPool/issues"
   },
-  "homepage": "https://github.com/zhoukq/TaskPool#readme"
+  "homepage": "https://github.com/zhoukq/TaskPool#readme",
+  "dependencies": {
+    "rxjs": "^6.6.6"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
 }
