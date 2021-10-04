@@ -1,5 +1,5 @@
 import { Observable, Subject, of } from "rxjs";
-import { catchError, delayWhen, flatMap, tap } from "rxjs/operators";
+import { catchError, delayWhen, mergeMap, tap } from "rxjs/operators";
 
 export class TaskPool {
   public readonly poolSize: number;
@@ -80,7 +80,7 @@ export class TaskPool {
       this.currentTaskNumber += 1;
       this.currentTaskCategory.add(categoryInfo.category);
       return of(value).pipe(
-        flatMap((v) => call(v, categoryInfo.category)),
+        mergeMap((v) => call(v, categoryInfo.category)),
         catchError((e) => {
           this.currentTaskCategory.delete(categoryInfo.category);
           this.releaseTaskNumber();
@@ -108,7 +108,7 @@ export class TaskPool {
     }
     return of(value).pipe(
       delayWhen(() => subject),
-      flatMap((v) => call(v, categoryInfo.category)),
+      mergeMap((v) => call(v, categoryInfo.category)),
       catchError((e) => {
         this.currentTaskCategory.delete(categoryInfo.category);
         this.releaseTaskNumber();
